@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    meta(http-equiv='Cache-Control', content='no-store, no-cache, must-revalidate')
+    meta(http-equiv='Pragma', content='no-cache')
+    meta(http-equiv='Expires', content='-1')
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    style 
+        include sign_up.css
+</head>
+<body>
+    <nav>
+        <div class="container_nav">
+            <img src="/static/images/logo1.png" alt="Not Found"id="logo" >
+        </div>
+    </nav>
+    <h1>Hey Manitians, Register to continue</h1>
+    
+    <div class="container">
+        <div id="form_1">
+            <h2>Please Enter Your Details</h2>
+            <form action="/sign_up" method = "post" enctype="multipart/form-data" id = "user_details" onsubmit="return check_validity()">
+                <input class="in" type="text" name="name" id ="name" placeholder="Enter your name" required>
+                <div id="yearbranch">
+                    
+                    <select name="course" id="course" required class="in1">
+                        <option value="">Course</option>
+                        <option value="btech">B.Tech.</option>
+                        <option value="barch">B.Arch.</option>
+                        <option value="bplan">B.Plan.</option>
+                        <option value="mtech">M.Tech.</option>
+                        <option value="phd">PhD</option>
+                    </select>
+                    <select name="branch" id="branch" required class="in1">
+                        <option value="">Branch</option>
+                        <option value="CSE">CSE</option>
+                        <option value="ECE">ECE</option>
+                        <option value="EE">EE</option>
+                        <option value="MSME">MSME</option>
+                        <option value="ME">ME</option>
+                        <option value="CHE">CHE</option>
+                        <option value="CE">CE</option>
+                        <option value="arch">Arch</option>
+                        <option value="plan">Plan</option>
+                    </select>
+                    <select name="gradyear" id="gradyear" required class="in1">
+                        <option value="">Passing year</option>
+                    </select>
+                </div>
+                <label for="DOB" class="labels">Enter you DOB</label>
+                <input type="date" name="DOB" class="in" id="DOB" placeholder="DOB" min="1995-06-01" max="2005-06-01" />
+                <label for="profile" class="labels">Choose a profile picture:</label>
+                <input type="file" name="profile" id="profile" class="in">
+                <input class="in" type="email" name="email" id="email" placeholder="Enter institute mail id" required>
+                <input class="in" type="password" name="password1" id="password1" placeholder="New password" required>
+                <input class="in" type="password" name="password2" id="password2" placeholder="Confirm password" required>
+                <div id="auth">
+                    <input type="text" name="otp" id="otp" placeholder="Enter otp">
+                    <button type="button" id="gtrotp">Generate OTP</button>
+                </div>
+                <p id="check_otp_msg"></p>
+                <input type="submit" value="Register Now" id="submit_now">
+                
+                p#warning=ret_msg_submit_warn
+                p#success=ret_msg_submit_sucs
+
+                <div id="sign_in"><a href="/sign_in">User Sign In</a></div>
+            </form>
+        </div>
+    </div>
+
+
+    script(src="http://localhost:8000/socket.io/socket.io.js") 
+    script  
+        include sign_up.js
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    meta(http-equiv='Cache-Control', content='no-store, no-cache, must-revalidate')
+    meta(http-equiv='Pragma', content='no-cache')
+    meta(http-equiv='Expires', content='-1')
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    style 
+        include sign_in.css
+</head>
+<body>
+    <nav>
+        <div class="container_nav">
+            <img src="/static/images/logo1.png" alt="Not Found"id="logo" >
+        </div>
+    </nav>
+    <h1>Welcome Manitians </h1>
+    
+    <div class="container">
+        <div id="form_1">
+            <h2>Please Sign In to continue</h2>
+            <form action="/sign_in" method = "post" id="form1">
+                <input class="in" type="email" name="email" id="email" placeholder="Email id" required>
+                <input class="in" type="password" name="password" id="password" placeholder="Password" required>
+                <input class="in" type="submit" value="Sign In" id="submit">
+                p#error= ret_msg
+                <div id="reg"><a href="/sign_up">register now</a><span>|</span><a href="/sign_up">update credentials</a></div>
+            </form>
+        </div>
+    </div>
+
+    script  
+        include sign_in.js
+</body>
+</html>

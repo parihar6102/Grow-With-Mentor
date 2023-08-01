@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    meta(http-equiv='Cache-Control', content='no-store, no-cache, must-revalidate')
+    meta(http-equiv='Pragma', content='no-cache')
+    meta(http-equiv='Expires', content='-1')
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grow With Mentor</title>
+    style  
+        include user_home.css
+
+</head>
+<body>
+    <div class="header">
+        <nav>
+            <div class="container">
+                <img src="/static/images/logo1.png" alt="Not Found"id="logo" >
+                <div class="item_container">
+                    <a href="/"><h3>Hey, #{user}</h3></a>
+                    <img src="/static/images/profile1.png" alt="Not Found" id="options">
+                </div>
+            </div>
+            <div id="mobile_screen_box">
+                <div id="mobile_screen_items">
+                    <ul>
+                        <li><a href="/mentor_reg" onclick="return confirm('Would you like to be a mentor?')">Mentor Registration</a></li>
+                        <li><a href="/logout" onclick="return confirm('You will be logged out from this device')">Logout (Device only)</a></li>
+                        <li><a href="/logout_all" onclick="return confirm('You will be logged out from all devices including this device')">Logout (All devices)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <section class="sec1">
+            <h1 class="h1_primary">Welcome to Grow With Mentor</h1>
+            <button type="button" id="find_mentor">Find Mentor</button>
+            <div id="typing"><p class="para_primary">Think, Infer and Prefer</p></div>
+        </section>
+    </div>
+
+
+    <div class="mentors">
+    
+    </div>
+    <div class="requested">
+
+    </div>
+    script
+        include user_home.js
+
+
+</body>
+</html>

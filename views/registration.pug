@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    meta(http-equiv='Cache-Control', content='no-store, no-cache, must-revalidate')
+    meta(http-equiv='Pragma', content='no-cache')
+    meta(http-equiv='Expires', content='-1')
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    style 
+        include registration.css
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <img src="/static/images/logo1.png" alt="Not Found"id="logo" >
+            <div class="item_container">
+                <a href="/"><h3>Hey, #{user}</h3></a>
+                <img src="/static/images/profile1.png" alt="Not Found" id="options">
+            </div>
+        </div>
+        <div id="mobile_screen_box">
+            <div id="mobile_screen_items">
+                <ul>
+                    <li><a href="/">User Home</a></li>
+                    <li><a href="/logout" onclick="return confirm('You will be logged out from this device')">Logout (Device only)</a></li>
+                    <li><a href="/logout_all" onclick="return confirm('You will be logged out from all devices including this device')">Logout (All devices)</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <h1 id="heading">Mentor Registration</h1>
+    <div class="form_container">
+        <form action="" method="post" id="mentor_form">
+
+            <label for="contact" class="form_box_labels"><h3>Contact Details</h3></label>
+            <div id="contact" class="form_box">
+                <label for="contact_mob" class="input_containers_labels"><h4>Whatsapp contact</h4></label>
+                <div class="input_containers"><input type="tel" name="contact_mob" id="contact_mob"  value= "#{data.contact_mob}" class = "input" placeholder="Enter contact no. (without +91)" required></div>
+                <div class="input_containers"><input type="number" name="mob_otp" id="mob_otp" class = "input_auth" placeholder="Enter OTP" ><button type="button" id="btn1">Generate OTP</button><p id="otp_reply1"></p></div>
+                <label for="contact_email" class="input_containers_labels"><h4>Email Id</h4></label>
+                <div class="input_containers"><input type="email" name="contact_email" id="contact_email" value="#{data.contact_email}" class = "input" placeholder="Enter Email Id" required></div>
+                <div class="input_containers"><input type="number" name="email_otp" id="email_otp" class = "input_auth" placeholder="Enter OTP"><button type="button" id="btn2">Generate OTP</button><p id="otp_reply2"></p></div>
+                <label for="timing" class="input_containers_labels"><h4>Timing for contact</h4></label>
+                <div class="input_containers_timing"><div class="time_upper"><span>From: &nbsp;&nbsp;</span><input type="time" name="timing_from" id="timing_from" value="#{data.timing_from}" required class="time"></div><div class="time_upper end"><span>To: &nbsp;&nbsp;</span><input type="time" name="timing_to" id="timing_to" value="#{data.timing_to}" required class="time"></div></div>
+            </div>
+
+
+            <label for="experience" class="form_box_labels"><h3>Experience</h3></label>
+            <div id="experience" class="form_box">
+                <label for="company1" class="input_containers_labels"> <h4>Latest Position (or Upcoming)</h4></label>
+                <div class="input_containers"><input type="text" name="company1" id="company1" value="#{data.company1}" class = "input" placeholder="Enter name of company" ></div>
+                <div class="input_containers"><input type="text" name="position1" id="position1" value="#{data.position1}" class = "input" placeholder="Enter your role in company"></div>
+                <div class="input_containers_date"><span class = "date_span">Date of joining: </span><input type="date" name="from1" id="from1" value="#{data.from1}" class="date from end"></div>
+
+                <label for="company2" class="input_containers_labels"><h4> Previous Position </h4></label>
+                <div class="input_containers"><input type="text" name="company2" id="company2" value="#{data.company2}" class = "input" placeholder="Enter name of company"></div>
+                <div class="input_containers"><input type="text" name="position2" id="position2" value="#{data.position2}" class = "input" placeholder="Enter your role in company"></div>
+                <div class="input_containers_date"><span class = "date_span">Date of joining: </span><input type="date" name="from2" id="from2" value="#{data.from2}" class="date"></div>
+                <div class="input_containers_date"><span class = "date_span">Date of exiting: </span><input type="date" name="to2" id="to2" value="#{data.to2}" class="date end"></div>
+
+                <label for="company3" class="input_containers_labels"><h4> Any internship done </h4></label>
+                <div class="input_containers"><input type="text" name="company3" id="company3" value="#{data.company3}" class = "input" placeholder="Enter name of company"></div>
+                <div class="input_containers"><input type="text" name="position3" id="position3" value="#{data.position3}" class = "input" placeholder="Enter your role in company"></div>
+                <div class="input_containers_date"><span class = "date_span">Date of joining: </span><input type="date" name="from3" id="from3" value="#{data.from3}" class="date"></div>
+                <div class="input_containers_date"><span class = "date_span">Date of exiting: </span><input type="date" name="to3" id="to3" value="#{data.to3}" class="date end"></div>
+
+                <label for="interviews" class="input_containers_labels"><h4> Interviews </h4></label>
+                <div class="input_containers"><input type="number" name="interviews" id="interviews" value="#{data.interviews}" class = "input" placeholder="Number of interviews appeared" min=0 required></div>
+
+                <label for="interests" class="input_containers_labels"><h4> Field of interests (Comma Seperated) </h4></label>
+                <div class="input_containers"><input type="text" name="interests" id="interests" value="#{data.interests}" class = "input" placeholder="Name of topics only" required></div>
+
+                <label for="achievements" class="input_containers_labels"><h4> Achievements (Comma Seperated)</h4></label>
+                <div class="input_containers"><input type="text" name="achievements" id="achievements" value="#{data.achievements}" class = "input" placeholder="Contest names with position" required></div>
+
+            </div>
+
+            <label for="projects" class="form_box_labels"><h3>Projects</h3></label>
+            <div id="projects" class="form_box">
+                <label for="minorproject" class="input_containers_labels">Minor Project</label>
+                <div class="input_containers"><input type="text" name="minorproject" id="minorproject" value="#{data.minorproject}" class = "input" placeholder="Enter your Minor project title" required></div>
+                <label for="majorproject" class="input_containers_labels">Major Project</label>
+                <div class="input_containers"><input type="text" name="majorproject" id="majorproject" value="#{data.majorproject}" class = "input" placeholder="Enter your Major project title"></div>
+                <label for="otherproject1" class="input_containers_labels">Other Projects</label>
+                <div class="input_containers"><input type="text" name="otherproject1" id="otherproject1" value="#{data.otherproject1}" class = "input" placeholder="Enter title of project" required></div>
+                <div class="input_containers"><input type="text" name="otherproject2" id="otherproject2" value="#{data.otherproject2}" class = "input" placeholder="Enter title of project"></div>
+                <div class="input_containers"><input type="text" name="otherproject3" id="otherproject3" value="#{data.otherproject3}" class = "input" placeholder="Enter title of project"></div>
+            </div>
+
+            <label for="social_handels" class="form_box_labels"><h3>Social Handels</h3></label>
+            <div id="social_handels" class="form_box">
+                <label for="linkedin" class="input_containers_labels">LinkedIn Profile</label>
+                <div class="input_containers"><input type="text" name="linkedin" id="linkedin" value="#{data.linkedin}" class = "input" placeholder="Enter your LinkedIn profile" required></div>
+                <label for="github" class="input_containers_labels">Github Profile</label>
+                <div class="input_containers"><input type="text" name="github" id="github" value="#{data.github}" class = "input" placeholder="Enter your Github profile" required></div>
+                <label for="twitter" class="input_containers_labels">Twitter Profile</label>
+                <div class="input_containers"><input type="text" name="twitter" id="twitter" value="#{data.twitter}" class = "input" placeholder="Enter your Twitter profile"></div>
+                <label for="instagram" class="input_containers_labels">Instagram Profile</label>
+                <div class="input_containers"><input type="text" name="instagram" id="instagram" value="#{data.instagram}" class = "input" placeholder="Enter your Instagram profile" required></div>
+                <label for="facebook" class="input_containers_labels">Facebook Profile</label>
+                <div class="input_containers"><input type="text" name="facebook" id="facebook" value="#{data.facebook}" class = "input" placeholder="Enter your Facebook profile"></div>
+            </div>
+
+
+
+            <label for="coding" class="form_box_labels"><h3>Coding Profiles</h3></label>
+            <div id="coding" class="form_box">
+                <label for="codeforces" class="input_containers_labels">Codeforces Profile</label>
+                <div class="input_containers"><input type="text" name="codeforces" id="codeforces" value="#{data.codeforces}" class = "input" placeholder="Enter your codeforces profile" required></div>
+                <label for="codechef" class="input_containers_labels">Codechef Profile</label>
+                <div class="input_containers"><input type="text" name="codechef" id="codechef" value="#{data.codechef}" class = "input" placeholder="Enter your codechef profile"></div>
+                <label for="leetocde" class="input_containers_labels">Leetcode Profile</label>
+                <div class="input_containers"><input type="text" name="leetcode" id="leetcode" value="#{data.leetcode}" class = "input" placeholder="Enter your Leetcode profile" required></div>
+                <label for="codingninja" class="input_containers_labels">Coding Ninja Profile</label>
+                <div class="input_containers"><input type="text" name="codingninja" id="codingninja" value="#{data.codingninja}" class = "input" placeholder="Enter your Coding Ninja profile"></div>
+            </div>
+
+            <input type="submit" value="Save Details" id="save">
+
+        </form>
+    </div>
+
+
+    script(src="http://localhost:8001/socket.io/socket.io.js") 
+    script  
+        include registration.js
+
+</body>
+</html>

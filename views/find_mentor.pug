@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    meta(http-equiv='Cache-Control', content='no-store, no-cache, must-revalidate')
+    meta(http-equiv='Pragma', content='no-cache')
+    meta(http-equiv='Expires', content='-1')
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    style  
+        include find_mentor.css
+
+</head>
+
+<body>
+    
+    <nav>
+        <div class="container">
+            <img src="/static/images/logo1.png" alt="Not Found"id="logo" >
+            <div class="item_container">
+                <a href="/"><h3>Hey, #{user}</h3></a>
+                <img src="/static/images/profile1.png" alt="Not Found" id="options">
+            </div>
+        </div>
+        <div id="mobile_screen_box">
+            <div id="mobile_screen_items">
+                <ul>
+                    <li><a href="/" >User Home</a></li>
+                    <li><a href="/mentor_reg" onclick="return confirm('Would you like to be a mentor?')">Mentor Registration</a></li>
+                    <li><a href="/logout" onclick="return confirm('You will be logged out from this device')">Logout (Device only)</a></li>
+                    <li><a href="/logout_all" onclick="return confirm('You will be logged out from all devices including this device')">Logout (All devices)</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="profiles" id="profiles">
+        <div class="profile" id="template">
+
+
+            <img src="" alt="" class="profile_img">
+            <h3 class="name"></h3>
+
+            <label class="heading"><h4>Graduation Details</h4></label>
+            <div class="line"><h5>Scholar No.: </h5><p></p></div>
+            <div class="line"><h5>Course : </h5><p></p></div>
+            <div class="line"><h5>Branch : </h5><p></p></div>
+            <div class="line"><h5>Year of Grad : </h5><p></p></div>
+            <div class="line"><h5>DOB : </h5><p></p></div>
+
+
+            <label class="heading"><h4>Contact Details</h4></label>
+            <div class="line"><h5>Mob : </h5><p></p></div>
+            <div class="line"><h5>Email : </h5><p></p></div>
+            <div class="line"><h5>Timing From : </h5><p></p></div>
+            <div class="line"><h5>Timing To : </h5><p></p></div>
+            
+
+            <label class="heading"><h4>Exeperience</h4></label>
+            <div class="line"><h5>Current Company : </h5><p></p></div>
+            <div class="line"><h5>Position :  </h5><p></p></div>
+            <div class="line"><h5>From :  </h5><p></p></div>
+            <div class="line"><h5>Prev Company :  </h5><p></p></div>
+            <div class="line"><h5>Position :  </h5><p></p></div>
+            <div class="line"><h5>From :  </h5><p></p></div>
+            <div class="line"><h5>To :  </h5><p></p></div>
+            <div class="line"><h5>Intern :  </h5><p></p></div>
+            <div class="line"><h5>Role :  </h5><p></p></div>
+            <div class="line"><h5>From :  </h5><p></p></div>
+            <div class="line"><h5>To :  </h5><p></p></div>
+            <div class="line"><h5>Interviews Appeared :  </h5><p></p></div>
+            <div class="line"><h5>Interests :  </h5><p></p></div>
+            <div class="line"><h5>Achievements :  </h5><p></p></div>
+
+
+            <label class="heading"><h4>Projects</h4></label>
+            <div class="line"><h5>Minor Project : </h5><p></p></div>
+            <div class="line"><h5>Major Project : </h5><p></p></div>
+            <div class="line"><h5>Personal Project : </h5><p></p></div>
+            <div class="line"><h5>Personal Project : </h5><p></p></div>
+            <div class="line"><h5>Personal Project : </h5><p></p></div>
+
+
+            <label class="heading"><h4>Social Handels</h4></label>
+            <div class="line"><h5>LinkedIn : </h5><p></p></div>
+            <div class="line"><h5>Github : </h5><p></p></div>
+            <div class="line"><h5>Twitter : </h5><p></p></div>
+            <div class="line"><h5>Instagram : </h5><p></p></div>
+            <div class="line"><h5>Facebook : </h5><p></p></div>
+
+            <label class="heading"><h4>Coding Handels</h4></label>
+            <div class="line"><h5>Codeforces : </h5><p></p></div>
+            <div class="line"><h5>Codechef : </h5><p></p></div>
+            <div class="line"><h5>Leetcode : </h5><p></p></div>
+            <div class="line"><h5>Coding Ninja : </h5><p></p></div>
+
+
+            
+
+
+        </div>
+    </div>
+
+
+    script  
+        include find_mentor.js
+
+</body>
+
+</html>

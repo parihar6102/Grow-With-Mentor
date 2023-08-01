@@ -1,0 +1,116 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+:root{
+    font-size: 16px;
+}
+.h1_primary{
+    font-weight: bold;
+    font-size: 2rem;
+}
+.para_primary{
+    font-weight: bold;
+}
+
+.header::before{
+    content:"";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: url('static/Images/bg2.jpeg') no-repeat center center/cover;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: 0.95;
+}
+.header{
+    position: relative;
+}
+/* Navbar Design */
+#logo{
+    height:max(5.5vw,70px);
+    width:max(13.75vw,175px);
+    opacity: 1;
+    cursor: pointer;
+}
+nav{
+    background-color: #53595eb0;
+    padding-top: 10px;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-inline: 10px;
+}
+.items ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.items ul li{
+    list-style: none;
+    padding-block: 5px;
+    padding-inline: 19px;
+    border: 1px solid #ffcc41fc;
+    border-radius: 2px;
+}
+nav a{
+    text-decoration: none;
+    color:#ffcc41fc;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+nav a:hover{
+    color:rgb(170, 154, 52);
+}
+
+
+
+
+
+/* Section1 design */
+
+.sec1{
+    padding-top: 150px;
+    padding-inline: 20vw;
+    padding-bottom: 200px;
+    color: rgb(247, 210, 3);
+}
+.sec1 h1{
+    text-align: center;
+    margin-bottom: 40px;
+}
+#typing{
+    width:224px;
+    margin-inline: auto;
+}
+.sec1 p{
+    text-align: center;
+    margin-inline: auto;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid rgb(247, 210, 3); /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 10s steps(40, end),
+      blink-caret .50s step-end infinite;
+    animation-iteration-count: infinite;
+
+}
+@keyframes typing {
+    0% { width: 0 }
+    30% { width: 100% }
+    100% {width: 100%}
+}
+  
+  /* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(247, 210, 3); }
+}
